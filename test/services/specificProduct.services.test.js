@@ -1,7 +1,7 @@
 
 import { SpecificProductService } from '../../src/services/specificProduct.services.js';
 
-describe('SpecificProduct', () => {
+describe('SpecificProductService', () => {
   it('should render the product details', async () => {
     const axios = {
       get: jest.fn().mockResolvedValue({

@@ -1,6 +1,6 @@
-import { ProductDescription } from '../../src/services/productDescription.services.js';
+import { ProductDescriptionService } from '../../src/services/productDescription.services.js';
 
-describe('ProductDescription', () => {
+describe('ProductDescriptionService', () => {
     
       it('should return the description of the item', async () => {
         const id = 'test-item-id';
@@ -8,7 +8,7 @@ describe('ProductDescription', () => {
   
         const axios = { get: jest.fn().mockResolvedValue({ data:{ plain_text: descriptionText }}) };
         
-        let descriptionService = new ProductDescription(axios);
+        let descriptionService = new ProductDescriptionService(axios);
   
         let description = await descriptionService.execute(id);
         
@@ -21,12 +21,12 @@ describe('ProductDescription', () => {
           
         const axios = { get: jest.fn().mockRejectedValue({ message: errorMessage }) };
         
-        let descriptionService = new ProductDescription(axios);
+        let descriptionService = new ProductDescriptionService(axios);
   
         try {
           await descriptionService.execute(id);
         } catch (error) {
-          expect(error).toBe(errorMessage);
+          expect(error.message).toBe(errorMessage);
         }
       });
     });

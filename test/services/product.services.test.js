@@ -1,10 +1,10 @@
 import { ProductsService } from "../../src/services/products.services.js";
-import { mockResponseServiceTests, mockResponseTests } from "../mocks/mockResponse.mocks";
+import { mockResponseServiceTests, mockResponseTests } from "../mocks/mockResponse.mocks.js";
 
 const axios = { get: jest.fn()}
 
 
-describe('FetchProduct', () => {
+describe('SearchProductService', () => {
     let fetchProduct;
   
     beforeEach(() => {
@@ -24,7 +24,7 @@ describe('FetchProduct', () => {
         expect(response).toEqual(mockResponseServiceTests);
       });
 
-      it('should make a GET request to the correct URL with the defautl parameters', async () => {
+      it('should make a GET request to the correct URL with the default parameters', async () => {
         const query = { q: 'test' };
         const pathParameter = 'test-site-id';
         const expectedUrl = `https://api.mercadolibre.com/sites/${pathParameter}/search?q=test&limit=10&offset=0&sort=price_asc`;

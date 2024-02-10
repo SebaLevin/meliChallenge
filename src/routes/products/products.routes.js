@@ -108,6 +108,12 @@ const router = Router();
  *           type: integer
  *         default: 10
  *         description: La cantidad de elementos a devolver.
+ *       - in: query
+ *         name: sort
+ *         schema:
+ *           type: string
+ *         default: price_asc
+ *         description: Ordena los resultados segun el precio en orden ascendente (price_asc) o descendente (price_desc)
  *     responses:
  *       '200':
  *         description: Petición exitosa.

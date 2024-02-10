@@ -7,6 +7,7 @@ export const mockResponseTests = {
     },
     filters: [
         {
+            name: "Categorías",
             values: [
                 {
                     path_from_root: [
