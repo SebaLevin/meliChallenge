@@ -1,5 +1,4 @@
-import MyCustomError from "../errors/custom.error.js";
-  export class ProductsService {
+export class ProductsService {
 
     constructor(axios) {
       this.axios = axios;
@@ -28,7 +27,7 @@ import MyCustomError from "../errors/custom.error.js";
             items: formattedItems
         }
       } catch (error) {
-       throw new MyCustomError(error);
+       throw new Error(error.message);
       }
         return formatedResponse;
     }
@@ -39,13 +38,16 @@ import MyCustomError from "../errors/custom.error.js";
       const categories = []
     
       data.filters.forEach(filter => {
+        if(filter.name === "Categorías") {
+  
           filter.values.forEach(value => {
              value.path_from_root.forEach(category => {
               categories.push(category.name)
              })
-          })    
+          })
+        }   
       });
-  
+
       return categories;
     }
   

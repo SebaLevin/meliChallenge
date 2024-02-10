@@ -1,5 +1,4 @@
 import { faker } from '@faker-js/faker';
-import MyCustomError from "../errors/custom.error.js";
 
 export class SpecificProductService {
 
@@ -41,7 +40,7 @@ export class SpecificProductService {
             return formatedResponse;
     
         } catch (error) {
-           throw new MyCustomError(error);
+           throw new Error(error.message);
         }
     }
 }

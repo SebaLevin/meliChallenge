@@ -1,5 +1,3 @@
-import MyCustomError from "../errors/custom.error.js";
-
 export class ProductDescriptionService {
 
     constructor(axios) {
@@ -18,7 +16,7 @@ export class ProductDescriptionService {
         
             description = response.data.plain_text;
         } catch (error) {
-            throw new MyCustomError(error);
+            throw new Error(error.message);
         }
         return description;
     }

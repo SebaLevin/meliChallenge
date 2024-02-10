@@ -10,7 +10,7 @@ const options = {
       description: "MiddleEnd API for Search Results",
     },
   },
-  apis: ["./src/routes/*.js"], 
+  apis: ["./src/routes/**/*.js"],
 };
 
 const swaggerSpec = swaggerJSDoc(options);

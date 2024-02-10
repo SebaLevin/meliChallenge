@@ -1,5 +1,3 @@
-import MyCustomError from "../errors/custom.error.js";
-
 export class ProductsController {
 
   constructor(productsService) {
@@ -18,7 +16,7 @@ export class ProductsController {
       } catch (error) {
         console.error('Error fetching data:', error);
 
-       throw new MyCustomError(error.message)
+        res.status(500).json({ error: 'Internal Server Error' });
       }
     }
   }
