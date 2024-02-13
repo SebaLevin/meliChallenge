@@ -22,7 +22,11 @@ export const pathParameterValidatorMiddleware = (req, res, next) => {
 
     const { id } = req.params;
 
-    const { limit, offset, sort } = req.query;
+    const { q, limit, offset, sort } = req.query;
+
+    if (!q) {
+        return res.status(400).send({ message: "Please Provide a Valid Query Search Parameters" });
+    }
 
     if (id && !validIdRegex.some(regex =>  regex.test(id))) {
         return res.status(400).send({ message: "Invalid Id Parameters" });

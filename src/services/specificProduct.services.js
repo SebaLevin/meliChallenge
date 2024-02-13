@@ -13,11 +13,12 @@ export class SpecificProductService {
     
         try {
     
-            const response = await this.axios.get(`${base_url}`);
-           
+            const [response, description] = await Promise.all([
+                this.axios.get(`${base_url}`),
+                this.searchProductDescriptionService.execute(id)
+            ])
+
             const data = response.data;
-    
-            const description = await this.searchProductDescriptionService.execute(id);
     
             const formatedResponse = {
                 author: {

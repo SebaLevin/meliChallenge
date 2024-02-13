@@ -4,6 +4,7 @@
 ## Indice 
 
 1. [Descripcion](#descripcion)
+    1. [Version de Node](#verion-de-node)
 2. [Dependencias](#dependencias)
 3. [Arranque del proyecto](#arranque-del-proyecto)
 4. [Documentacion de la API](#documentacion-de-la-api)
@@ -23,6 +24,13 @@
 ## Descripcion
 
 Este proyecto sirve como API Proxy o servicio intermerdio entre un cliente y una API externa.
+
+### Verion de Node
+
+```
+node 18.17.1
+```
+
 
 ## Dependencias
 
